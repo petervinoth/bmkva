@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"> 
+    <head>  
+        <title>Login</title>  
+        <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+        
+        <style>
+        #cen{
+        text-aline:center;
+        }
+        .demo{
+		text-align: center;
+		height:500px;
+              width:400px;
+              margin:30px;
+              border:7px solid black;
+              position:absolute;
+              left:500px;
+              top:28px;
+              
+              border-top-left-radius:5%;
+              border-top-right-radius:5%;
+
+
+	}
+	
+	.form-control{
+		height: 40px;
+		width: 300px;
+		}
+		.email_lo{
+			position: absolute;
+			left:30px;
+		}
+		.pass{
+			position: absolute;
+			left: 30px;
+			top: 150px;
+		}
+		#patt{
+			position: absolute;
+			top:220px;
+			left: 128px;
+			width: 120px
+		}
+		#for{
+			position: absolute;
+			top: 350px;
+		}
+        
+        
+        </style>
+    </head>  
+    <body>   <div class="container">
+ 
+  <div class="alert alert-danger" role="alert" th:if="${param.error}">
+   The email or password is incorrect!
+  </div>
+  
+  <div class="demo">
+        <form action="#" th:action="@{/}" th:object="${user}" method="post">
+            	
+        <div class="alert alert-danger" role="alert" th:if="${message}" th:utext="${message}">
+     </div>
+     <h1>Sign up</h1>
+    
+        <div class="h3 mb-3 font-weight-normal">
+          <div class="email_lo">
+    <label for="inputEmail" class="sr-only">Email</label>
+       <input th:field="*{email}"  name="email" type="email"  class="form-control" placeholder="Email" required autofocus><br><br>
+   </div>
+   </div>
+
+   <div class="pass">
+       <label for="inputPassword" class="sr-only">Password</label>
+       <input th:field="*{password}" type="password" name="password" class="form-control" placeholder="Password" required><br><br><br>
+
+   </div>
+   <div id="patt">
+   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button></div>
+<div id="for">
+     <div class="margin-top20 text-center"> change the password?? <a href="/forgotpassword">Forgot Password?</a></div><br>
+             <div class="margin-top20 text-center">Don't have an account?<a href="/signup">create account</a></div>
+       
+</div>
+
+      
+
+  
+      
+   
+  </form>
+</div>
+    </div>    </body>  
+</html>  
